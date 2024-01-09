@@ -235,6 +235,7 @@ footer {
 
   .header__logo {
     width: initial;
+    margin-bottom: 2.5rem;
   }
 
   .header__title {
