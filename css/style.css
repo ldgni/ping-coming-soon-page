@@ -233,6 +233,10 @@ footer {
     margin-bottom: 5.88rem;
   }
 
+  .header__logo {
+    width: initial;
+  }
+
   .header__title {
     font-size: 3rem;
     line-height: 3.75rem;
