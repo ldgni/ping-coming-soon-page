@@ -1,7 +1,7 @@
 <div align="center">
     <img src="assets/images/frontendmentor-logo.svg" alt="Frontend Mentor logo" width="80">
     <h1>Ping Coming Soon Page</h1>
-    <a href="">ꜰʀᴏɴᴛᴇɴᴅ ᴍᴇɴᴛᴏʀ ꜱᴏʟᴜᴛɪᴏɴ</a>
+    <a href="https://www.frontendmentor.io/solutions/ping-coming-soon-page-8rxt8ZmLd9">ꜰʀᴏɴᴛᴇɴᴅ ᴍᴇɴᴛᴏʀ ꜱᴏʟᴜᴛɪᴏɴ</a>
     <br>
     <br>
     <img src="https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white" alt="HTML5">
