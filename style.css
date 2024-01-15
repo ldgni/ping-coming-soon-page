@@ -156,6 +156,10 @@ main {
   color: #b8c7ed;
 }
 
+.input--error {
+  border-color: #ff5466;
+}
+
 .msg {
   font-style: italic;
   font-size: 0.625rem;
@@ -177,12 +181,10 @@ main {
 }
 
 .msg--error {
-  display: none;
   color: #ff5466;
 }
 
 .msg--success {
-  display: none;
   color: #2bcc76;
 }
 
