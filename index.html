@@ -5,46 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Ping Coming Soon Page" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
     <title>Ping Coming Soon Page</title>
   </head>
   <body>
     <div class="container">
       <header>
-        <img
-          src="assets/images/logo.svg"
-          alt="Ping logo"
-          class="header__logo"
-        />
-        <h1 class="header__title">
-          We are launching <strong class="highlight">soon!</strong>
+        <img src="images/logo.svg" alt="Ping logo" class="header__logo" />
+      </header>
+      <main>
+        <h1 class="main__title">
+          We are launching <strong class="title__highlight">soon!</strong>
         </h1>
-        <p class="header__text">Subscribe and get notified</p>
-        <form id="subscribe-form" class="header__form">
+        <p class="main__text">Subscribe and get notified</p>
+        <form id="subscribe-form" class="main__form">
           <input
             type="email"
             name="userEmail"
             id="email-input"
             placeholder="Your email address…"
+            aria-invalid="false"
             class="form__input"
           />
           <button type="submit" id="submit-btn" class="form__btn">
             Notify Me
           </button>
         </form>
-      </header>
-      <main>
         <img
-          src="assets/images/illustration-dashboard.webp"
+          src="images/illustration-dashboard.webp"
           alt="Dashboard illustration"
           class="main__dashboard-img"
         />
       </main>
       <footer>
-        <ul class="footer__socials">
-          <li>
-            <a href="#" class="social-link" aria-label="facebook">
+        <ul class="footer__socials" role="list">
+          <li role="listitem">
+            <a href="#" class="social-link" aria-label="Facebook">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="1rem"
@@ -59,8 +62,8 @@
               </svg>
             </a>
           </li>
-          <li>
-            <a href="#" class="social-link" aria-label="twitter">
+          <li role="listitem">
+            <a href="#" class="social-link" aria-label="Twitter">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="1rem"
@@ -75,8 +78,8 @@
               </svg>
             </a>
           </li>
-          <li>
-            <a href="#" class="social-link" aria-label="instagram">
+          <li role="listitem">
+            <a href="#" class="social-link" aria-label="Instagram">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 height="1rem"
@@ -92,7 +95,9 @@
             </a>
           </li>
         </ul>
-        <p class="footer__copyright">© Copyright Ping. All rights reserved.</p>
+        <p class="footer__copyright">
+          &copy; Copyright Ping. All rights reserved.
+        </p>
       </footer>
     </div>
   </body>
