@@ -26,12 +26,14 @@
         </h1>
         <p class="main__text">Subscribe and get notified</p>
         <form id="subscribe-form" class="main__form">
+          <label for="email-input" class="visually-hidden">Email address</label>
           <input
             type="email"
-            name="userEmail"
+            name="email"
             id="email-input"
             placeholder="Your email address…"
             aria-invalid="false"
+            autocomplete="off"
             class="form__input"
           />
           <button type="submit" id="submit-btn" class="form__btn">

@@ -49,6 +49,18 @@ body {
   max-width: 39.8125rem;
 }
 
+/* UTILITY */
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+}
+
 /* HEADER */
 
 header {
