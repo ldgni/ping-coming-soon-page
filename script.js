@@ -2,62 +2,43 @@
 const subscribeForm = document.getElementById("subscribe-form");
 const emailInput = document.getElementById("email-input");
 
-// Create variables to store the error and success messages
-let errorMessage = null;
-let successMessage = null;
-
 // Create a regular expression to validate the email address
 const emailValidationRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-// Function to create a message
-function createAlertMessage(type, text) {
-  const message = document.createElement("p");
-  message.textContent = text;
-  message.classList.add("msg", `msg--${type}`);
-  message.setAttribute("role", "alert");
-  return message;
-}
 
 // Add an event listener to the form
 subscribeForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (emailValidationRegex.test(emailInput.value)) {
-    // Remove the error message if it exists
-    if (errorMessage) {
-      emailInput.classList.remove("input--error");
-      errorMessage.remove();
-      errorMessage = null;
-    }
+  // Remove existing error message
+  const existingErrorMessage = document.getElementById("error-message");
+  if (existingErrorMessage) {
+    existingErrorMessage.remove();
+  }
 
-    // Only create the success message if it doesn't already exist
-    if (!successMessage) {
-      successMessage = createAlertMessage("success", "Thanks for subscribing");
-      emailInput.removeAttribute("aria-describedby");
-      emailInput.removeAttribute("aria-invalid");
-      subscribeForm.appendChild(successMessage);
-      emailInput.value = "";
-      emailInput.blur();
-    }
+  // Check if the email address is invalid
+  if (!emailValidationRegex.test(emailInput.value)) {
+    // Create an error message
+    const errorMessage = document.createElement("p");
+    errorMessage.innerText = "Please provide a valid email address";
+    errorMessage.id = "error-message";
+    errorMessage.className = "form__error-msg";
+    errorMessage.setAttribute("role", "alert");
+
+    // Append the error message to the form
+    subscribeForm.appendChild(errorMessage);
+
+    // Add the error styles to the input field
+    emailInput.classList.add("form__input--error");
+    emailInput.setAttribute("aria-invalid", "true");
+    emailInput.setAttribute("aria-describedby", "error-message");
   } else {
-    // Remove the success message if it exists
-    if (successMessage) {
-      successMessage.remove();
-      successMessage = null;
-    }
+    // Remove the error styles from the input field
+    emailInput.classList.remove("form__input--error");
+    emailInput.removeAttribute("aria-invalid");
+    emailInput.removeAttribute("aria-describedby");
 
-    // Only create the error message if it doesn't already exist
-    if (!errorMessage) {
-      errorMessage = createAlertMessage(
-        "error",
-        "Please provide a valid email address"
-      );
-      errorMessage.setAttribute("id", "error");
-      emailInput.classList.add("input--error");
-      emailInput.setAttribute("aria-describedby", "error");
-      emailInput.setAttribute("aria-invalid", "true");
-      subscribeForm.appendChild(errorMessage);
-      emailInput.blur();
-    }
+    // Clear the input field and remove focus
+    emailInput.value = "";
+    emailInput.blur();
   }
 });

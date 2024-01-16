@@ -156,11 +156,12 @@ main {
   color: #b8c7ed;
 }
 
-.input--error {
+.form__input--error {
   border-color: #ff5466;
 }
 
-.msg {
+.form__error-msg {
+  color: #ff5466;
   font-style: italic;
   font-size: 0.625rem;
   font-weight: 700;
@@ -169,23 +170,15 @@ main {
 }
 
 @media (min-width: 39.8125rem) {
-  .msg {
+  .form__error-msg {
     font-size: 0.75rem;
     letter-spacing: 0.00938rem;
+    text-align: left;
     position: absolute;
     top: 100%;
     width: 100%;
-    text-align: left;
     margin: 0.38rem 0 0 1.87rem;
   }
-}
-
-.msg--error {
-  color: #ff5466;
-}
-
-.msg--success {
-  color: #2bcc76;
 }
 
 .form__btn {
